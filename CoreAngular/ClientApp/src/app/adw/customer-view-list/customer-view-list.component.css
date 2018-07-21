@@ -1,0 +1,10 @@
+.customerViewList tbody {
+  display:block;
+  max-height:600px;
+  overflow-y:scroll;
+}
+.customerViewList thead, .customerViewList tbody tr {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+}

@@ -1,0 +1,23 @@
+<p *ngIf="!(customerList$ | async).length"><em>Loading...</em></p>
+<div *ngIf="(customerList$ | async).length" class="customerViewList">
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th style="width: 8%;">Id</th>
+        <th style="width: 8%;">Title</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of (customerList$ | async)" id="{{customer.businessEntityId}}">
+        <td style="width: 8%;">{{customer.businessEntityId}}</td>
+        <td style="width: 8%;">{{customer.title}}</td>
+        <td>{{customer.firstName}}</td>
+        <td>{{customer.lastName}}</td>
+        <td>{{customer.emailAddress}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

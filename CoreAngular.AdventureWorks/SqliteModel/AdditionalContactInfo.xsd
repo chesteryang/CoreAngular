@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:act="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ContactTypes" xmlns:crm="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ContactRecord" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ContactInfo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ContactTypes.xsd" namespace="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ContactTypes" />
+  <xs:import schemaLocation="ContactRecord.xsd" namespace="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ContactRecord" />
+  <xs:element name="AdditionalContactInfo">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="act:telephoneNumber" />
+        <xs:element ref="act:homePostalAddress" />
+        <xs:element ref="act:eMail" />
+        <xs:element ref="crm:ContactRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

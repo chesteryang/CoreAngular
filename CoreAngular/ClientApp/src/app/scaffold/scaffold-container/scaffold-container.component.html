@@ -1,0 +1,68 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="first-tab" data-toggle="tab"
+      href="#first" role="tab" aria-controls="first" aria-selected="true">
+        <span class="oi oi-sun" title="counter" aria-hidden="true"></span> Counter
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="second-tab" data-toggle="tab"
+      href="#second" role="tab" aria-controls="second" aria-selected="false">
+        <span class="oi oi-tablet" title="fetch-data" aria-hidden="true"></span> Fetch Data
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="third-tab" data-toggle="tab"
+      href="#third" role="tab" aria-controls="third" aria-selected="false">
+        <span class="oi oi-spreadsheet" title="employee view" aria-hidden="true"></span> Employee View
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="fourth-tab" data-toggle="tab"
+      href="#fourth" role="tab" aria-controls="four" aria-selected="false">
+      <span class="oi oi-spreadsheet" title="employee view" aria-hidden="true"></span> Customer View
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="fiveth-tab" data-toggle="tab"
+      href="#fiveth" role="tab" aria-controls="five" aria-selected="false">
+      <span class="oi oi-spreadsheet" title="employee view" aria-hidden="true"></span> Combine View
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="sixth-tab" data-toggle="tab"
+      href="#sixth" role="tab" aria-controls="six" aria-selected="false">Tab 6
+    </a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
+    <app-counter-component></app-counter-component>
+  </div>
+  <div class="tab-pane fade" id="second" role="tabpanel" aria-labelledby="second-tab">
+    <app-fetch-data></app-fetch-data>
+  </div>
+  <div class="tab-pane fade" id="third" role="tabpanel" aria-labelledby="third-tab">
+    <app-employee-view-list></app-employee-view-list>
+  </div>
+  <div class="tab-pane fade" id="fourth" role="tabpanel" aria-labelledby="fourth-tab">
+    <app-customer-view-list></app-customer-view-list>
+  </div>
+  <div class="tab-pane fade" id="fiveth" role="tabpanel" aria-labelledby="fiveth-tab">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6">
+          <h4>Employee View</h4>
+          <app-employee-view-list></app-employee-view-list>
+        </div>
+        <div class="col-sm-6">
+          <h4>Customer View</h4>
+          <app-customer-view-list></app-customer-view-list>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="sixth" role="tabpanel" aria-labelledby="sixth-tab">
+    tab 6 content
+  </div>
+</div>

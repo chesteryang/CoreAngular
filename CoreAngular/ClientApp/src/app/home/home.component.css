@@ -1,0 +1,23 @@
+.app-logo {
+  animation: app-logo-spin infinite 5s linear;
+  height: 80px;
+}
+
+.app-header {
+  background-image: linear-gradient(to right, #ffffff 0%, #5c5c5c 100%);
+  height: 50px;
+  padding: 10px;
+  text-align: right;
+  color: whitesmoke;
+  margin-bottom: 10px;
+}
+
+.app-title {
+  font-size: 1.3em;
+}
+
+@keyframes app-logo-spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+

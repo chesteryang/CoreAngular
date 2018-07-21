@@ -1,0 +1,23 @@
+<p *ngIf="!(employeeList$ | async).length"><em>Loading...</em></p>
+<div *ngIf="(employeeList$ | async).length" class="employeeViewList">
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th style="width: 8%;">Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Login</th>
+        <th>Email (password)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of (employeeList$ | async)" id="{{employee.businessEntityId}}">
+        <td style="width: 8%;">{{employee.businessEntityId}}</td>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.loginId}}</td>
+        <td>{{employee.emailAddress}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

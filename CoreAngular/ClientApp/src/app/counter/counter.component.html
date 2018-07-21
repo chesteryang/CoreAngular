@@ -1,0 +1,14 @@
+<h1>Counter</h1>
+<p>This is a simple example of an Angular component.</p>
+<div class="row">
+  <div class="col-sm-3">
+    <p>Component counter: <strong>{{ currentCount }}</strong></p>
+    <button class="btn btn-outline-primary" (click)="incrementCounter()">Increment</button>
+    <button class="btn btn-outline-primary" (click)="decrementCounter()">Decrement</button>
+  </div>
+  <div class="col-sm-3">
+      <p>Redux Store Counter: <strong>{{ count$ | async  }}</strong></p>
+      <button class="btn btn-outline-success" (click)="increment()">Increment</button>
+      <button class="btn btn-outline-success" (click)="decrement()">Decrement</button>
+  </div>
+</div>

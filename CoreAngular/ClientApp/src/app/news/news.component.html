@@ -1,0 +1,41 @@
+<div class="row newsButtons">
+<div class="btn-group">
+  <button [class]="buttonClass" [class.focus]="isInitFocused" (click)="getNews('country=ca')">Canada</button>
+  <button [class]="buttonClass" (click)="getNews('sources=google-news-ca')">Google</button>
+  <button [class]="buttonClass" (click)="getNews('category=health&country=ca')">Health</button>
+  <button [class]="buttonClass" (click)="getNews('category=technology&country=ca')">Technology</button>
+  <button [class]="buttonClass" (click)="getNews('category=business&country=ca')">Business</button>
+</div>
+<span class="buttonSpan"></span>
+<div class="btn-group">
+  <button [class]="buttonClass" (click)="getNews('country=us')">US</button>
+  <button [class]="buttonClass" (click)="getNews('sources=google-news')">Google</button>
+  <button [class]="buttonClass" (click)="getNews('category=health&country=us')">Health</button>
+  <button [class]="buttonClass" (click)="getNews('category=technology&country=us')">Technology</button>
+  <button [class]="buttonClass" (click)="getNews('category=business&country=us')">Business</button>
+</div>
+<span class="buttonSpan"></span>
+<div class="btn-group">
+  <button [class]="buttonClass" (click)="getNews('country=cn')">China</button>
+  <button [class]="buttonClass" (click)="getNews('category=health&country=cn')">健康</button>
+  <button [class]="buttonClass" (click)="getNews('category=technology&country=cn')">技术</button>
+  <button [class]="buttonClass" (click)="getNews('category=business&country=cn')">商务</button>
+</div>
+</div>
+<div class="clearfix"></div>
+<p *ngIf="!(news$ | async).length"><em>Loading...</em></p>
+<div class="newsBackground">
+  <div *ngIf="(news$ | async).length">
+    <div class="newsPanel" *ngFor="let article of (news$ | async)">
+      <a [href]="article.url" target="_blank">
+          <div class="newsHeader">
+              <span class="newsSource">{{article.source.name}}</span>
+              <span class="newsDate">{{article.publishedAt | date }}</span>
+          </div>
+          <div class="newsPanelBackground" [style.background-image]="getUrl(article)"></div>
+          <h4 class="newsTitle">{{article.title}}</h4>
+          <p class="newsDescription">{{article.description}}</p>
+      </a>
+    </div>
+  </div>
+</div>
