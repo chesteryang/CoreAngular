@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { select } from '@angular-redux/store';
+import { IEmployeeState} from '../redux/common';
+import { LoginService } from '../../shared/login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  @select(['adventureworksState', 'employeeState']) readonly employeeState$: Observable<IEmployeeState>;
+
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
   }

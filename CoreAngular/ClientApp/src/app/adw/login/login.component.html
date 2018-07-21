@@ -1,3 +1,17 @@
-<p>
-  login works!
-</p>
+<div *ngIf="employeeState$ | async as state; else loading" class="row">
+  <div *ngIf="state.loggedIn">
+    {{state.person.firstName + ' ' + state.person.lastName}}
+    <button class="btn btn-primary">
+        <span class="oi oi-account-logout"></span> Logout
+    </button>
+  </div>
+  <div *ngIf="!state.loggedIn">
+      <button class="btn btn-primary">
+          <span class="oi oi-account-login"></span> Login
+      </button>
+  </div>
+</div>
+
+<ng-template #loading>
+  Loading ... ...
+</ng-template>
