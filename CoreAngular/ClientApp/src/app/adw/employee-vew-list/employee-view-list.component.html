@@ -1,5 +1,5 @@
-<p *ngIf="!(employeeList$ | async).length"><em>Loading...</em></p>
-<div *ngIf="(employeeList$ | async).length" class="employeeViewList">
+<p *ngIf="!(employeeList$ | async) || !(employeeList$ | async).length"><em>Loading...</em></p>
+<div *ngIf="(employeeList$ | async) && (employeeList$ | async).length" class="employeeViewList">
   <table class='table table-striped'>
     <thead>
       <tr>

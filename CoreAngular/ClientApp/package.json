@@ -8,6 +8,7 @@
     "build": "ng build",
     "build:ssr": "npm run build -- --app=ssr --output-hashing=media",
     "test": "ng test",
+    "test1": "ng test --source-map=false",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

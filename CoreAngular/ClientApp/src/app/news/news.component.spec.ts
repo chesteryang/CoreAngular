@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgRedux } from '@angular-redux/store';
 import { NgReduxTestingModule, MockNgRedux } from '@angular-redux/store/lib/testing';
 import { NewsComponent } from './news.component';
 import { NewsAction } from '../redux/actions';
@@ -19,7 +20,10 @@ describe('NewsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ NewsComponent ],
       imports: [ NgReduxTestingModule ],
-      providers: [ {provide: NewsAction, useValue: spy} ]
+      providers: [
+        { provide: NewsAction, useValue: spy },
+        { provide: NgRedux, useFactory: MockNgRedux.getInstance }
+       ]
     })
     .compileComponents();
    }));

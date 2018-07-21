@@ -59,6 +59,11 @@ export interface IEmployeeState {
   person: IPerson
 }
 
+export interface IUser {
+  loginId: string
+  password: string
+}
+
 export interface IAdventureworksState {
   employeeViewState: IEmployeeViewModel[]
   employeeState: IEmployeeState

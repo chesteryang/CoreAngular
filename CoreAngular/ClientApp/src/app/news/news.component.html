@@ -23,9 +23,9 @@
 </div>
 </div>
 <div class="clearfix"></div>
-<p *ngIf="!(news$ | async).length"><em>Loading...</em></p>
+<p *ngIf="!(news$ | async) || !(news$ | async).length"><em>Loading...</em></p>
 <div class="newsBackground">
-  <div *ngIf="(news$ | async).length">
+  <div *ngIf="(news$ | async) && (news$ | async).length">
     <div class="newsPanel" *ngFor="let article of (news$ | async)">
       <a [href]="article.url" target="_blank">
           <div class="newsHeader">

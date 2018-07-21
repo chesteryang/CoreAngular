@@ -1,5 +1,5 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ScaffoldContainerComponent } from './scaffold-container.component';
 
 describe('ScaffoldContainerComponent', () => {
@@ -8,7 +8,8 @@ describe('ScaffoldContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScaffoldContainerComponent ]
+      declarations: [ScaffoldContainerComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

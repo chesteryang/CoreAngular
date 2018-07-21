@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { NgRedux } from '@angular-redux/store';
 import { Dispatch } from 'redux';
-import { IEmployeeViewModel, IPerson, ICustomerViewModel } from '../common';
+import { IEmployeeViewModel, IPerson, ICustomerViewModel, IUser, IEmployee } from '../common';
 import { IStore } from '../../../redux/common';
+
 
 @Injectable()
 export class EmployeeViewModelActions {
@@ -60,11 +61,21 @@ export class EmployeeActions {
   static LOGGED_IN = 'LOGGED_IN';
   static LOGGED_OUT = 'LOGGED_OUT';
 
-  constructor(
-    private http: HttpClient,
-    private ngRedux: NgRedux<IStore>) {}
+  constructor(private ngRedux: NgRedux<IStore>) {}
 
-  validate(loginId: string, password: string) {
+  loggedOut(): void {
+    this.ngRedux.dispatch({type: EmployeeActions.LOGGED_OUT});
+  }
 
+  loggedIn(employee: IEmployee): void {
+    this.ngRedux.dispatch({type: EmployeeActions.LOGGED_IN, payload: employee});
+  }
+
+  validating(): void {
+    this.ngRedux.dispatch({type: EmployeeActions.VALIDATING_STARTING});
+  }
+
+  validationFailed(errorMessage: string): void {
+    this.ngRedux.dispatch({type: EmployeeActions.VALIDATING_FAILED, payload: errorMessage});
   }
 }
