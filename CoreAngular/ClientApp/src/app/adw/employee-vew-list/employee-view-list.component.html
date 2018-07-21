@@ -1,5 +1,4 @@
-<p *ngIf="!(employeeList$ | async) || !(employeeList$ | async).length"><em>Loading...</em></p>
-<div *ngIf="(employeeList$ | async) && (employeeList$ | async).length" class="employeeViewList">
+<div *ngIf="employeeList$ | async as list; else loading" class="employeeViewList">
   <table class='table table-striped'>
     <thead>
       <tr>
@@ -11,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let employee of (employeeList$ | async)" id="{{employee.businessEntityId}}">
+      <tr *ngFor="let employee of list" id="{{employee.businessEntityId}}">
         <td style="width: 8%;">{{employee.businessEntityId}}</td>
         <td>{{employee.firstName}}</td>
         <td>{{employee.lastName}}</td>
@@ -21,3 +20,6 @@
     </tbody>
   </table>
 </div>
+<ng-template #loading>
+  Loading ... ...
+</ng-template>
