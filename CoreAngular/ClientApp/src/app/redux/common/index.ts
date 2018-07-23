@@ -1,9 +1,11 @@
 import { IAdventureworksState } from '../../adw/redux/common';
+import { IScaffoldState } from '../../scaffold/redux/common';
 
 export interface IStore {
   counterState: ICounterState
   newsState: INewsState
   adventureworksState: IAdventureworksState
+  scaffoldState: IScaffoldState
 }
 
 export interface ICounterState {

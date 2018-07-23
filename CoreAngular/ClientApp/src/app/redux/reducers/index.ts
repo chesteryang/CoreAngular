@@ -2,6 +2,7 @@ import { Action, Reducer, combineReducers } from 'redux';
 import { CounterActions, NewsAction } from '../actions';
 import { ICounterState, INewsState, IStore, INews } from '../common';
 import { adventureworksReducers, initAdventureworksState } from '../../adw/redux/reducers';
+import { scaffoldReducer, initScaffoldState } from '../../scaffold/redux/reducers';
 
 const initCounterState: ICounterState = {
   count: 0,
@@ -34,12 +35,14 @@ export const newsReducer: Reducer<INewsState> =
 export const rootReducer = combineReducers<IStore>({
   counterState: counterReducer,
   newsState: newsReducer,
-  adventureworksState: adventureworksReducers
+  adventureworksState: adventureworksReducers,
+  scaffoldState: scaffoldReducer
 });
 
 export const initialState: IStore = {
   counterState: initCounterState,
   newsState: initNewsState,
-  adventureworksState : initAdventureworksState
+  adventureworksState : initAdventureworksState,
+  scaffoldState: initScaffoldState
 };
 

@@ -6,6 +6,9 @@ import { CounterComponent } from '../counter/counter.component';
 import { FetchDataComponent } from '../fetch-data/fetch-data.component';
 import { CounterActions } from '../redux/actions';
 import { SharedModule } from '../shared/shared.module';
+import { TemplateFormComponent } from './template-form/template-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { UserInfoActions } from './redux/actions';
 
 @NgModule({
   imports: [
@@ -18,10 +21,13 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     CounterComponent,
     FetchDataComponent,
-    ScaffoldContainerComponent
+    ScaffoldContainerComponent,
+    TemplateFormComponent,
+    ReactiveFormComponent
   ],
   providers: [
-    CounterActions
+    CounterActions,
+    UserInfoActions
   ]
 })
 export class ScaffoldModule { }
