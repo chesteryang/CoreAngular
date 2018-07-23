@@ -3,6 +3,7 @@ import { NgRedux } from '@angular-redux/store';
 import { NgReduxTestingModule, MockNgRedux } from '@angular-redux/store/lib/testing';
 import { NewsComponent } from './news.component';
 import { NewsAction } from '../redux/actions';
+import { doesNotThrow } from 'assert';
 
 describe('NewsComponent', () => {
   let element: HTMLElement;
@@ -45,6 +46,7 @@ describe('NewsComponent', () => {
     component.news$.subscribe(news => {
       expect(news.length).toEqual(1);
     });
+    expect(1).toEqual(1);
   }));
 
   afterEach(() => {
