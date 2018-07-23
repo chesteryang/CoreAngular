@@ -2,7 +2,7 @@ import { Reducer, combineReducers } from 'redux';
 import {IUserInfo, IScaffoldState } from '../common';
 import { UserInfoActions } from '../actions';
 
-const initUserInfo: IUserInfo = { name: '', phone: '', email: ''};
+export const initUserInfo: IUserInfo = { name: '', phone: '', email: ''};
 export const initScaffoldState: IScaffoldState = { userInfo: initUserInfo };
 
 export const userInfoReducer: Reducer<IUserInfo> =

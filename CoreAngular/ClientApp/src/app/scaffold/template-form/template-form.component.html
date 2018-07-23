@@ -1,3 +1,24 @@
-<p>
-  template-form works!
-</p>
+<h4>Template Form</h4>
+<p>This is a simple example of an Angular template form.</p>
+<form class="form-group" novalidate (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <label>
+    <span>Full name: </span>
+    <input class="form-control" type="text" name="name" placeholder="Your name"
+      [ngModel]="(userInfo$ | async).name">
+  </label>
+  <label>
+    <span>Phone number: </span>
+  <input class="form-control" type="text" name="phone" placeholder="Your phone"
+    [ngModel]="(userInfo$ | async).phone">
+  </label>
+  <label>
+    <span>Email address: </span>
+    <input class="form-control" type="email" name="email" placeholder="your email"
+      [ngModel]="(userInfo$ | async).email">
+  </label>
+  <button class="btn btn-primary" type="submit">Save To Redux state</button>
+  <input class="btn btn-default" type="reset" value="Reset">
+</form>
+<p>form value: {{ f.value | json }}</p>
+<p>Redux state: {{ userInfo$ | async | json }}</p>
+
