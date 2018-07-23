@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScaffoldContainerComponent } from './scaffold-container/scaffold-container.component';
 import { CounterComponent } from '../counter/counter.component';
 import { FetchDataComponent } from '../fetch-data/fetch-data.component';
@@ -18,6 +18,7 @@ import { UserInfoActions } from './redux/actions';
       { path: 'scaffold', component: ScaffoldContainerComponent }
     ]),
     FormsModule,
+    ReactiveFormsModule,
     SharedModule
   ],
   declarations: [

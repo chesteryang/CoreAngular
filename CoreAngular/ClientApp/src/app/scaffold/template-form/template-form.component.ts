@@ -20,5 +20,4 @@ export class TemplateFormComponent implements OnInit {
   onSubmit({ value, valid }: { value: IUserInfo, valid: boolean }) {
     this.actions.saveInfo(value);
   }
-
 }
