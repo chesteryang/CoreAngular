@@ -75,6 +75,8 @@ namespace CoreAngular.Controllers
                 return BadRequest(ModelState);
             }
 
+            await Task.Delay(1000);
+
             var person = await _context.Person.Include(p => p.Employee).Include(p => p.Password)
                 .FirstOrDefaultAsync(p => p.Employee != null && p.Employee.LoginId == user.LoginId);
  

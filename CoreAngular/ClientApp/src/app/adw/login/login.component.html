@@ -6,7 +6,7 @@
         <span class="oi oi-account-logout"></span> Logout
     </button>
   </div>
-  <div *ngIf="!state.loggedIn">
+  <div *ngIf="!state.loggedIn && !state.validating">
     <form  class="form-group" novalidate (ngSubmit)="onSubmit(f)" #f="ngForm">
       <label>
           <span class="font-weight-bold">Login Id: </span>
@@ -22,6 +22,9 @@
           <span class="oi oi-account-login"></span> Login
       </button>
     </form>
+  </div>
+  <div *ngIf="!state.loggedIn && state.validating">
+    Validating ... ...
   </div>
 </div>
 
