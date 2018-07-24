@@ -1,14 +1,27 @@
 <div *ngIf="employeeState$ | async as state; else loading" class="row">
   <div *ngIf="state.loggedIn">
-    {{state.person.firstName + ' ' + state.person.lastName}}
-    <button class="btn btn-primary">
+    <p><span class="font-weight-bold">Name: </span> {{state.person.firstName + ' ' + state.person.lastName }}</p>
+    <p><span class="font-weight-bold">Job Title: </span>{{state.person.employee?.jobTitle}}</p>
+    <button class="btn btn-primary" (click)="onLogout()">
         <span class="oi oi-account-logout"></span> Logout
     </button>
   </div>
   <div *ngIf="!state.loggedIn">
-      <button class="btn btn-primary">
+    <form  class="form-group" novalidate (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <label>
+          <span class="font-weight-bold">Login Id: </span>
+          <input class="form-control" type="text" name="LoginId"
+            placeholder="Your login Id" ngModel>
+      </label>
+      <label>
+        <span class="font-weight-bold">Password: </span>
+        <input class="form-control" type="password" name="password"
+          placeholder="Your password" ngModel>
+      </label>
+      <button class="btn btn-primary" type="submit">
           <span class="oi oi-account-login"></span> Login
       </button>
+    </form>
   </div>
 </div>
 

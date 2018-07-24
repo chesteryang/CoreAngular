@@ -21,6 +21,10 @@ export class LoginService {
     .subscribe(result => this.actions.loggedIn(result));
   }
 
+  logout(): void {
+    this.actions.loggedOut();
+  }
+
   private postToServer(user: IUser): Observable<IEmployee> {
     return this.http.post<IEmployee>('/api/People/Validate', user)
     .pipe(

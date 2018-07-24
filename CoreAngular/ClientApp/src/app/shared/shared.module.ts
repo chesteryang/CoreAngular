@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { EmployeeViewListComponent } from '../adw/employee-vew-list/employee-view-list.component';
 import { EmployeeViewModelActions,
   CustomerViewModelActions,
@@ -11,6 +12,7 @@ import { LoginService } from './login.service';
 
 @NgModule({
   imports: [
+    FormsModule,
     CommonModule
   ],
   declarations: [

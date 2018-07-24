@@ -52,7 +52,7 @@ export const initEmployeeState: IEmployeeState
     person: {businessEntityId: 0} as IPerson} as IEmployeeState;
 
 export const employeeReducer: Reducer<IEmployeeState> =
-  (state = initEmployeeState, action: {type: string, payload: IPerson | string}) => {
+  (state = initEmployeeState, action: {type: string, payload: IPerson | string }) => {
     switch (action.type) {
       case EmployeeActions.LOGGED_OUT:
         return initEmployeeState;

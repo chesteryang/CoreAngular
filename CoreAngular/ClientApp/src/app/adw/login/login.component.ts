@@ -18,4 +18,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit({ value, valid }: { value: any, valid: boolean }) {
+    this.loginService.validate(value.LoginId, value.password);
+  }
+
+  onLogout() {
+    this.loginService.logout();
+  }
 }
