@@ -1,3 +1,23 @@
-<p>
-  reactive-form works!
-</p>
+<h4>Reactive Form</h4>
+<p>This is a simple example of an Angular reactive form.</p>
+<form class="form-group" novalidate [formGroup]="user" (ngSubmit)="onSubmit(user)" >
+  <label>
+    <span>Full name:</span>
+    <input class="form-control" type="text" formControlName="name" 
+      placeholder="Your name">
+  </label>
+  <label>
+    <span>Phone number:</span>
+    <input class="form-control" type="text" formControlName="phone" 
+      placeholder="Your phone">
+  </label>
+  <label>
+   <span>Email address:</span>
+   <input class="form-control" type="email" formControlName="email" 
+    placeholder="Your email">
+  </label>
+  <br />
+  <button class="btn btn-primary" type="submit">Save to Redux store</button>
+  <input class="btn btn-default" type="reset" value="Clear Form">
+</form>
+<p>form value: {{ user.value | json }}</p>

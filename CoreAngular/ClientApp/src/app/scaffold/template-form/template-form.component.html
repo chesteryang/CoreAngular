@@ -13,10 +13,11 @@
   </label>
   <label>
     <span>Email address: </span>
-    <input class="form-control" type="email" name="email" placeholder="your email"
+    <input class="form-control" type="email" name="email" placeholder="Your email"
       [ngModel]="(userInfo$ | async).email">
   </label>
-  <button class="btn btn-primary" type="submit">Save To Redux state</button>
+  <br />
+  <button class="btn btn-primary" type="submit">Save To Redux store</button>
   <input class="btn btn-default" type="reset" value="Clear Form">
 </form>
 <p>form value: {{ f.value | json }}</p>
