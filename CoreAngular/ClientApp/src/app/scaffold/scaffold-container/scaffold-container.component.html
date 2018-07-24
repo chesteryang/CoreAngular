@@ -43,11 +43,16 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
+    <div class="row">
+      <div class="col-sm-6">
+        <app-template-form></app-template-form>
+      </div>
+      <div class="col-sm-6">
+        <app-reactive-form></app-reactive-form>
+      </div>
+    </div>
+    <hr />
     <app-counter-component></app-counter-component>
-    <hr />
-    <app-template-form></app-template-form>
-    <hr />
-    <app-reactive-form></app-reactive-form>
   </div>
   <div class="tab-pane fade" id="second" role="tabpanel" aria-labelledby="second-tab">
     <app-fetch-data></app-fetch-data>
