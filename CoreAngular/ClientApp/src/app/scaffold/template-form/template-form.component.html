@@ -8,8 +8,8 @@
   </label>
   <label>
     <span>Phone number: </span>
-  <input class="form-control" type="text" name="phone" placeholder="Your phone"
-    [ngModel]="(userInfo$ | async).phone">
+    <input class="form-control" type="text" name="phone" placeholder="Your phone"
+      [ngModel]="(userInfo$ | async).phone">
   </label>
   <label>
     <span>Email address: </span>
@@ -17,7 +17,7 @@
       [ngModel]="(userInfo$ | async).email">
   </label>
   <button class="btn btn-primary" type="submit">Save To Redux state</button>
-  <input class="btn btn-default" type="reset" value="Reset">
+  <input class="btn btn-default" type="reset" value="Clear Form">
 </form>
 <p>form value: {{ f.value | json }}</p>
 <p>Redux state: {{ userInfo$ | async | json }}</p>
