@@ -44,7 +44,22 @@ export class LoginService {
           message = 'Login Id not found';
           break;
         case 400:
-          message = error.error.message;
+          if (error.error instanceof Object) {
+            let m = '';
+            if (error.error.message) {
+              m = error.error.message;
+            } else {
+              if (error.error.loginId) {
+                m = error.error.loginId[0];
+              }
+              if (error.error.password) {
+                m = m + (m === '' ? '' : ', ') + error.error.password[0];
+              }
+            }
+            message = m;
+          } else {
+            message = error.error.message;
+          }
           break;
       }
       // console.error(

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Serialization;
 using Swashbuckle.AspNetCore.Swagger;
 using CoreAngular.AdventureWorks.SqliteModel;
 using Microsoft.Extensions.Logging;
@@ -28,7 +29,12 @@ namespace CoreAngular
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc()
+            .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+            .AddJsonOptions(options => {
+                var contractResolver = options.SerializerSettings.ContractResolver as DefaultContractResolver;
+                contractResolver.NamingStrategy.ProcessDictionaryKeys = true;
+            });
 
             services.AddDbContext<Adventureworks2017Context>();
 

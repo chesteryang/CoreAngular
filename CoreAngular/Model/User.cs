@@ -5,9 +5,9 @@ namespace CoreAngular.Model
 {
     public class User
     {
-        [Required]
+        [Required(ErrorMessage = "Login Id is required")]
         public string LoginId { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; }
     }
 }
