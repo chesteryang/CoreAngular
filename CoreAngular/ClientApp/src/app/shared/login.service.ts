@@ -18,7 +18,9 @@ export class LoginService {
   validate(loginId: string, password: string): void {
     this.actions.validating();
     this.postToServer({loginId, password})
-    .subscribe(result => this.actions.loggedIn(result));
+    .subscribe(
+      result => this.actions.loggedIn(result),
+      error => this.actions.validationFailed(error));
   }
 
   logout(): void {
@@ -33,7 +35,22 @@ export class LoginService {
   }
 
   private handleError(error: HttpErrorResponse) {
-      // return an observable with a user-facing error message
-    return throwError('Something bad happened; please try again later.');
+    let message = 'Something bad happened; please try again later.';
+    if (error.error instanceof ErrorEvent) {
+      message = error.error.message;
+    } else {
+      switch (error.status) {
+        case 404:
+          message = 'Login Id not found';
+          break;
+        case 400:
+          message = error.error.message;
+          break;
+      }
+      // console.error(
+      //   `Backend returned code ${error.status}, ` +
+      //   `body was: ${error.error}`);
+    }
+    return throwError(message);
   }
 }

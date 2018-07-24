@@ -48,7 +48,7 @@ export const customerViewModelReducer: Reducer<ICustomerViewModel[]> =
 export const initEmployeeState: IEmployeeState
   = {loggedIn: false,
     validating: false,
-    vadidatedMessage: '',
+    validatedMessage: '',
     person: {businessEntityId: 0} as IPerson} as IEmployeeState;
 
 export const employeeReducer: Reducer<IEmployeeState> =
@@ -57,11 +57,11 @@ export const employeeReducer: Reducer<IEmployeeState> =
       case EmployeeActions.LOGGED_OUT:
         return initEmployeeState;
       case EmployeeActions.LOGGED_IN:
-        return {loggedIn: true, validating: false, vadidatedMessage: '', person: action.payload as IPerson};
+        return {loggedIn: true, validating: false, validatedMessage: '', person: action.payload as IPerson};
       case EmployeeActions.VALIDATING_STARTING:
         return Object.assign({}, state, {loggedIn: false, validating: true});
       case EmployeeActions.VALIDATING_FAILED:
-        return Object.assign({}, initEmployeeState, {vadidatedMessage: action.payload});
+        return Object.assign({}, initEmployeeState, {validatedMessage: action.payload});
       default:
         return state;
     }

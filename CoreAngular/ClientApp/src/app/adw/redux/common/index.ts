@@ -55,7 +55,7 @@ export interface IEmailAddress {
 export interface IEmployeeState {
   loggedIn: boolean
   validating: boolean
-  vadidatedMessage: string
+  validatedMessage: string
   person: IPerson
 }
 

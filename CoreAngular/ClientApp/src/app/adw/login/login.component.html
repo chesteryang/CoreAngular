@@ -21,6 +21,8 @@
       <button class="btn btn-primary" type="submit">
           <span class="oi oi-account-login"></span> Login
       </button>
+      <div style="color: red;" *ngIf="state.validatedMessage && !state.validating">
+          {{state.validatedMessage}}</div>
     </form>
   </div>
   <div *ngIf="!state.loggedIn && state.validating">
