@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Serialization;
 using Swashbuckle.AspNetCore.Swagger;
 using CoreAngular.AdventureWorks.SqliteModel;
+using CoreAngular.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
 
@@ -74,6 +75,7 @@ namespace CoreAngular
                 app.UseHsts();
             }
 
+            app.UseAdventureworksGifServingMiddleware();
             // app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();

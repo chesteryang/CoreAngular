@@ -47,5 +47,14 @@ namespace CoreAngular.Db.Tests
             Assert.NotNull(customer);
             Assert.NotNull(info);
         }
+
+        [Fact]
+        public void CanGetGif()
+        {
+            var photo = _context.ProductPhoto.Single(p => p.ProductPhotoId == 69);
+
+            File.WriteAllBytes("gg.gif", photo.LargePhoto);
+            
+        }
     }
 }

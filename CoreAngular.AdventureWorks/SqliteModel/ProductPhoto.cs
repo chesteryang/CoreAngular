@@ -11,9 +11,9 @@ namespace CoreAngular.AdventureWorks.SqliteModel
         }
 
         public long ProductPhotoId { get; set; }
-        public string ThumbNailPhoto { get; set; }
+        public byte[] ThumbNailPhoto { get; set; }
         public string ThumbnailPhotoFileName { get; set; }
-        public string LargePhoto { get; set; }
+        public byte[] LargePhoto { get; set; }
         public string LargePhotoFileName { get; set; }
         public string ModifiedDate { get; set; }
 
