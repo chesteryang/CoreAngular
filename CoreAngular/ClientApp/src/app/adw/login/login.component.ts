@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit({ value, valid }: { value: any, valid: boolean }) {
-    this.loginService.validate(value.LoginId, value.password);
+    this.loginService.validate(value.loginId, value.password);
   }
 
   onLogout() {
