@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { NgRedux } from '@angular-redux/store';
 import { Dispatch } from 'redux';
-import { IEmployeeViewModel, IPerson, ICustomerViewModel, IUser, IEmployee } from '../common';
+import { IEmployeeViewModel, IPerson, ICustomerViewModel, IUser, IEmployee, IProductViewModel } from '../common';
 import { IStore } from '../../../redux/common';
 
 
@@ -48,6 +48,22 @@ export class CustomerViewModelActions {
       .subscribe(result => {
         dispatch({
           type: CustomerViewModelActions.MODEL_LOADED,
+          payload: result
+        });
+      });
+  }
+}
+
+@Injectable()
+export class ProductViewModelActions {
+  static MODEL_LOADED = 'ProductViewModel_LOADED';
+  constructor(private http: HttpClient) {}
+
+  loadModel(dispatch: Dispatch): void {
+    this.http.get<IProductViewModel[]>('/api/Products/GetProductViewModel')
+      .subscribe(result => {
+        dispatch({
+          type: ProductViewModelActions.MODEL_LOADED,
           payload: result
         });
       });

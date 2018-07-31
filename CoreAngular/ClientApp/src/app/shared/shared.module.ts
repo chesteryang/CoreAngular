@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { EmployeeViewListComponent } from '../adw/employee-vew-list/employee-view-list.component';
 import { EmployeeViewModelActions,
   CustomerViewModelActions,
-  EmployeeActions } from '../adw/redux/actions';
+  EmployeeActions,
+  ProductViewModelActions} from '../adw/redux/actions';
 import { CustomerViewListComponent } from '../adw/customer-view-list/customer-view-list.component';
 import { ModelsService } from './models.service';
 import { LoginComponent } from '../adw/login/login.component';
@@ -23,6 +24,7 @@ import { LoginService } from './login.service';
   providers: [
     EmployeeViewModelActions,
     CustomerViewModelActions,
+    ProductViewModelActions,
     EmployeeActions,
     ModelsService,
     LoginService

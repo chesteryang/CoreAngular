@@ -14,6 +14,16 @@ export interface ICustomerViewModel {
   lastName: string
 }
 
+export interface IProductViewModel {
+  productId: number
+  name: string
+  productNumber: string
+  standardCost: string
+  listPrice: string
+  subCategoryName: string
+  thumbnailPhotoFileName:	string
+  largePhotoFileName: string
+}
 export interface IPerson {
   businessEntityId:	number
   personType:	string
@@ -68,4 +78,5 @@ export interface IAdventureworksState {
   employeeViewState: IEmployeeViewModel[]
   employeeState: IEmployeeState
   customerViewState: ICustomerViewModel[]
+  productViewState: IProductViewModel[]
 }

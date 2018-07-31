@@ -3,11 +3,13 @@ import { IEmployeeViewModel,
   IPerson,
   IAdventureworksState,
   ICustomerViewModel,
-  IEmployeeState} from '../common';
+  IEmployeeState,
+  IProductViewModel} from '../common';
 import { EmployeeViewModelActions,
   PersonActions,
   CustomerViewModelActions,
-  EmployeeActions} from '../actions';
+  EmployeeActions,
+  ProductViewModelActions} from '../actions';
 
 export const initEmployeeViewModelState: IEmployeeViewModel[] = [];
 
@@ -45,6 +47,18 @@ export const customerViewModelReducer: Reducer<ICustomerViewModel[]> =
     }
 };
 
+export const initProductViewModelState: IProductViewModel[] = [];
+
+export const productViewModelReducer: Reducer<IProductViewModel[]> =
+  (state = initProductViewModelState, action: {type: string, payload: IProductViewModel[]}) => {
+    switch (action.type) {
+      case ProductViewModelActions.MODEL_LOADED:
+        return action.payload;
+      default:
+        return state;
+    }
+  };
+
 export const initEmployeeState: IEmployeeState
   = {loggedIn: false,
     validating: false,
@@ -70,11 +84,13 @@ export const employeeReducer: Reducer<IEmployeeState> =
 export const adventureworksReducers = combineReducers<IAdventureworksState>({
   employeeViewState: employeeViewModelReducer,
   employeeState: employeeReducer,
-  customerViewState: customerViewModelReducer
+  customerViewState: customerViewModelReducer,
+  productViewState: productViewModelReducer
 });
 
 export const initAdventureworksState = {
   employeeViewState: initEmployeeViewModelState,
   employeeState: initEmployeeState,
-  customerViewState: initCustomerViewModelState
+  customerViewState: initCustomerViewModelState,
+  productViewState: initProductViewModelState
 };

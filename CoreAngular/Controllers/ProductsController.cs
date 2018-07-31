@@ -11,7 +11,7 @@ using CoreAngular.Model;
 
 namespace CoreAngular.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]"), Produces("application/json")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
@@ -22,7 +22,7 @@ namespace CoreAngular.Controllers
             _context = context;
         }
 
-        [HttpGet("ViewModel")]
+        [HttpGet("GetProductViewModel")]
         public IEnumerable<ProductViewModel> GetProductViewModels()
         {
             var list = _context.ProductProductPhoto.Where(pp => pp.ProductPhotoId != 1)
