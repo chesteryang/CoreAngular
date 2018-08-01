@@ -10,6 +10,8 @@ import { CustomerViewListComponent } from '../adw/customer-view-list/customer-vi
 import { ModelsService } from './models.service';
 import { LoginComponent } from '../adw/login/login.component';
 import { LoginService } from './login.service';
+import { ProductViewComponent } from '../adw/product-view/product-view.component';
+import { ProductViewListComponent } from '../adw/product-view-list/product-view-list.component';
 
 @NgModule({
   imports: [
@@ -19,6 +21,8 @@ import { LoginService } from './login.service';
   declarations: [
     EmployeeViewListComponent,
     CustomerViewListComponent,
+    ProductViewComponent,
+    ProductViewListComponent,
     LoginComponent
   ],
   providers: [
@@ -32,6 +36,8 @@ import { LoginService } from './login.service';
   exports: [
     EmployeeViewListComponent,
     CustomerViewListComponent,
+    ProductViewComponent,
+    ProductViewListComponent,
     LoginComponent
   ]
 })
