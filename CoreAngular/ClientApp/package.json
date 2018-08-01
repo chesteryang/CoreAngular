@@ -61,7 +61,7 @@
   "optionalDependencies": {
     "node-sass": "^4.9.0"
   },
-  "eslintConfig":{
-    "plugins": [ ]
+  "eslintConfig": {
+    "plugins": []
   }
 }

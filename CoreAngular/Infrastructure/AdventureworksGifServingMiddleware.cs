@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using CoreAngular.AdventureWorks.SqliteModel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+#pragma warning disable 1591
 
 namespace CoreAngular.Infrastructure
 {
