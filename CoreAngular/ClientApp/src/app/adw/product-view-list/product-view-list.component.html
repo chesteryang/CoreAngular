@@ -1,3 +1,25 @@
-<p>
-  product-view-list works!
-</p>
+<div *ngIf="productList$ | async as list; else loading" class="productList">
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th style="width: 8%;">Id</th>
+        <th>Name</th>
+        <th>Model</th>
+        <th>Image</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of list" id="{{p.productId}}">
+        <td style="width: 8%;">{{p.productId}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.productNumber}}</td>
+        <td><img width="80" src="/adwimages/{{p.thumbnailPhotoFileName}}" alt="{{p.name}}"></td>
+        <td>{{p.listPrice}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #loading>
+  Loading ... ...
+</ng-template>

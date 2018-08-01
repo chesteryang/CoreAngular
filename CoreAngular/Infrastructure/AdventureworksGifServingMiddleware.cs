@@ -37,6 +37,12 @@ namespace CoreAngular.Infrastructure
 
                 if (photo != null)
                 {
+                    context.Response.OnStarting(state => {
+                        var httpContext = (HttpContext) state;
+                        httpContext.Response.Headers.Add("Cache-Control", "public, max-age=31536000");
+                        return Task.FromResult(0);
+                    }, context);
+                    
                     await context.Response.Body.WriteAsync(isSmallImage ? photo.ThumbNailPhoto : photo.LargePhoto);
                 }
                 else
