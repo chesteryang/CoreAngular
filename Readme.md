@@ -44,3 +44,7 @@ Microsoft.EntityFrameworkCore.SqlServer -o model -p CoreAngular.AdventureWorks.c
 28. generate c# classes for Additional Info xml parsing.
 	xsd /c /namespace:CoreAngular.AdventureWorks.SqliteModel AdditionalContactInfo.xsd ContactTypes.xsd ContactRecord.xsd
 29. Update git repo author info
+30. Add angular template form and reactive form
+31. Add login component
+32. Add adventureworks photo middleware
+33. Add product component.
