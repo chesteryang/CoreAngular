@@ -48,3 +48,4 @@ Microsoft.EntityFrameworkCore.SqlServer -o model -p CoreAngular.AdventureWorks.c
 31. Add login component
 32. Add adventureworks photo middleware
 33. Add product component.
+34. Add Dockerfile
