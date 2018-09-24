@@ -49,3 +49,16 @@ Microsoft.EntityFrameworkCore.SqlServer -o model -p CoreAngular.AdventureWorks.c
 32. Add adventureworks photo middleware
 33. Add product component.
 34. Add Dockerfile
+```
+dotnet publish -c Release
+docker build -t coreangularapp bin\Release\netcoreapp2.1\publish\
+--local run
+docker run --rm -it -p 5000:80 coreangularapp
+
+heroku login
+heroku container:login
+heroku apps:create coreangularapp
+docker tag coreangularapp registry.heroku.com/coreangularapp/web
+docker push registry.heroku.com/coreangularapp/web
+heroku container:release web --app=coreangularapp
+```
