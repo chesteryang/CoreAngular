@@ -26,7 +26,7 @@ export class NewsAction {
 
   loadNews(query: string, dispatch: Dispatch): void {
     this.http.get<INewsState>
-     (`https://newsapi.org/v2/top-headlines?${query}&apiKey=adf0927cbd624a20abb1517d8b56114b`)
+     (`/api/SampleData/News?${query}`)
       .subscribe(result => {
         dispatch({
           type: NewsAction.NEWS_LOADED,
